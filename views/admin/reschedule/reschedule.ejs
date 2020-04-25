@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<center>
+
+	<h1> <%= pageName %> </h1>
+	<font size="5" > <a href="/admin">Back to List</a> </font>
+	<br/><br/>
+
+
+	<table border="3" height= "100px" width="550px" >
+		<tr>
+			<th>ID</th>
+			<th>MOVIE</th>
+			<th>Times</th>
+			<th>OPTION</th>
+		</tr>
+
+		<% for(var i = 0; i < showDetails.length; i++){ %>
+		<tr>
+			<td><%= showDetails[i].id %></td>
+			<td><%= showDetails[i].movie %></td>
+			<td><%= showDetails[i].times %></td>
+			<td>
+				<a href="/admin/reschedule/<%= pageName %>/<%= showDetails[i].id %>">Edit</a> | 
+				<a href="/admin/reschedule/<%= pageName %>/<%= showDetails[i].id %>/delete">Delete</a>
+			</td>
+		</tr>
+		<% } %>
+
+	</table>
+
+
+	</center>
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+
+	<br>
+	
+	<h1>LET'S SET NEW MOVIE TIMES</h1>
+
+	<br>
+	<br>
+
+	<a href="/admin"><font size="5" > Back to List </font></a>
+	<br/><br/>
+	<form method="post">
+		<table border="2" height= "250px" width="450px">
+
+			<font size="6">
+
+			<tr>
+				<td>NEW MOVIE NAME</td>
+				<td><input type="text" name="mname"></td>
+			</tr>
+			<tr>
+				<td>THEATER NAME</td>
+				<td>
+					<select  name="tname">
+
+					<% for(var i = 0; i < theaterList.length; i++){ %>
+					  
+			<option value = <%= theaterList[i].theatername %>  > <%= theaterList[i].theatername %> </option>
+				
+				<% } %>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>TIMES</td>
+				<td><input type="text" name="times"></td>
+			</tr>
+
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Save"></td>
+			</tr>
+
+		</font>
+
+		</table>
+
+		<table>
+			<tr>
+				<td>
+				<ul>
+					<% for(var i = 0; i < errs.length; i++){ %>
+						<li><%= errs[i].message %></li>
+					<% } %>
+				</ul>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</center>	
+</body>
+</html>

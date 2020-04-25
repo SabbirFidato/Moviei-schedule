@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>EDIT SHOWTIME</h2>
+	<a href="/admin/reschedule/<%= details.theater %>">Back to Theater</a>
+	<br/><br/>
+	<form method="post">
+		<input type="hidden" name="scheduleid" value="<%= details.id %>">
+		<table>
+			<tr>
+				<td>MOVIE NAME</td>
+				<td><input type="text" name="mname" value="<%=details.movie%>"></td>
+			</tr>
+
+			<tr>
+				<td>THEATER NAME</td>
+				<td><input type="text" name="tname" value="<%=details.theater%>"></td>
+			</tr>
+
+			<tr>
+				<td>TIME</td>
+				<td><input type="text" name="time" value="<%=details.times%>"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Save"></td>
+			</tr>
+		</table>
+		<ul>
+			<% for(var i = 0; i < errs.length; i++){ %>
+				<li><%= errs[i].message %></li>
+			<% } %>
+		</ul>
+	</form>
+</body>
+</html>

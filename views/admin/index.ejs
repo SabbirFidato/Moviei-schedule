@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+<center>
+	<h1>Welcome Boss! </h1>
+
+	<a href="/logout"><font size="5" >Logout</font></a> 
+
+
+	<br/><br/>
+	<br/><br/>
+
+	<a href="/admin/create"><font size="6">Add new movie schedule</font></a>
+
+
+	<br/><br/>
+	<table border="3" height= "200px" width="550px" >
+		<tr>
+			<th>ID</th>
+			<th>THEATER NAME</th>
+			<th>OPTION</th>
+		</tr>
+		
+
+		<% for(var i = 0; i < theaterList.length; i++){ %>
+		<tr>
+			<td><center> <%= theaterList[i].id %> </center></td>
+			<td><center> <%= theaterList[i].theatername %> </center></td>
+			<td><center>
+				<a href="/admin/reschedule/<%= theaterList[i].theatername %>" font size="10">Rescehdule movies</a>  
+				
+			</center></td>
+		</tr>
+		<% } %>
+
+	</table>
+</center>
+
+</body>
+</html>
